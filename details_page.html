@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Details Page</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+
+  <?php 
+  
+  $url="http://api.kano.me/share?limit=100";
+	//  Initiate curl
+$ch = curl_init();
+// Disable SSL verification
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+// Will return the response, if false it print the response
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// Set the url
+curl_setopt($ch, CURLOPT_URL,$url);
+// Execute
+$result=curl_exec($ch);
+// Closing
+curl_close($ch);
+	
+//	var_dump(json_decode($result, true));
+
+	?>
+
+<h2> Header </h2>
+
+<h6> Full Picture </h6>
+<img src="" >
+  
+  </body>
+</html>
